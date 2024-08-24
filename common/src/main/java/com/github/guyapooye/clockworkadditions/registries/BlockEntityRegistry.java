@@ -5,9 +5,10 @@ import com.github.guyapooye.clockworkadditions.blocks.bearings.flap.KineticFlapB
 import com.github.guyapooye.clockworkadditions.blocks.bearings.heli.PhysicsBearingBlockEntity;
 import com.github.guyapooye.clockworkadditions.blocks.bearings.heli.archived.BasePhysicsBearingBlockEntity;
 import com.github.guyapooye.clockworkadditions.blocks.copycats.CWACopycatBlockEntity;
+import com.github.guyapooye.clockworkadditions.blocks.fluid.extensible_hose.ExtensibleHoseBlockEntity;
+import com.github.guyapooye.clockworkadditions.blocks.fluid.extensible_hose.ExtensibleHoseInstance;
 import com.github.guyapooye.clockworkadditions.blocks.kinetics.cv_joint.CVJointBlockEntity;
 import com.github.guyapooye.clockworkadditions.blocks.kinetics.cv_joint.CVJointInstance;
-import com.github.guyapooye.clockworkadditions.blocks.kinetics.cv_joint.CVJointRenderer;
 import com.github.guyapooye.clockworkadditions.blocks.kinetics.handlebar.HandlebarBlockEntity;
 import com.github.guyapooye.clockworkadditions.blocks.kinetics.pedals.PedalsBlockEntity;
 import com.github.guyapooye.clockworkadditions.blocks.kinetics.pedals.PedalsInstance;
@@ -53,8 +54,9 @@ public class BlockEntityRegistry {
             .blockEntity("cv_joint", CVJointBlockEntity::new)
             .instance(() -> CVJointInstance::new)
             .validBlocks(BlockRegistry.CV_JOINT)
-            .renderer(() -> CVJointRenderer::new)
+            //.renderer(() -> CVJointRenderer::new)
             .register();
+    public static BlockEntityEntry<? extends ExtensibleHoseBlockEntity> EXTENSIBLE_HOSE;
     public static BlockEntityEntry<? extends CWACopycatBlockEntity> COPYCAT;
 
     public static void register() {}

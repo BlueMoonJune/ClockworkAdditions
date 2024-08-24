@@ -5,6 +5,7 @@ import com.github.guyapooye.clockworkadditions.blocks.bearings.heli.PhysicsBeari
 import com.github.guyapooye.clockworkadditions.blocks.bearings.heli.archived.BasePhysicsBearingBlock;
 import com.github.guyapooye.clockworkadditions.blocks.copycats.wingalikes.CopycatFlapBlock;
 import com.github.guyapooye.clockworkadditions.blocks.copycats.wingalikes.CopycatWingBlock;
+import com.github.guyapooye.clockworkadditions.blocks.fluid.extensible_hose.ExtensibleHoseBlock;
 import com.github.guyapooye.clockworkadditions.blocks.kinetics.cv_joint.CVJointBlock;
 import com.github.guyapooye.clockworkadditions.blocks.kinetics.handlebar.HandlebarBlock;
 import com.github.guyapooye.clockworkadditions.blocks.kinetics.pedals.PedalsBlock;
@@ -96,6 +97,15 @@ public class BlockRegistry {
                     .blockstate(BlockStateGen.horizontalBlockProvider(true))
                     .simpleItem()
                     .lang("CV Joint")
+                    .register();
+    public static final BlockEntry<ExtensibleHoseBlock> EXTENSIBLE_HOSE =
+            REGISTRATE.block("extensible_hose", ExtensibleHoseBlock::new)
+                    .initialProperties(SharedProperties::stone)
+                    .properties(BlockBehaviour.Properties::noOcclusion)
+                    .addLayer(() -> RenderType::cutoutMipped)
+                    .blockstate(BlockStateGen.horizontalBlockProvider(true))
+                    .simpleItem()
+                    .lang("Extensible Hose")
                     .register();
     public static BlockEntry<? extends CopycatWingBlock> COPYCAT_WING;
     public static BlockEntry<? extends CopycatFlapBlock> COPYCAT_FLAP;
